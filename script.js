@@ -12,13 +12,13 @@ var toLowercase
 // take in user information
 function userInfo(){
 
-  const userAnswer = prompt("Click OK to confirm including special characters.");
+  const userInfo = prompt("Click OK to confirm including special characters.");
 
-  const userAnswer = prompt("Click OK to confirm numeric characters.");
+  const userInfo = prompt("Click OK to confirm numeric characters.");
   
-  const userAnswer = prompt("Click OK to confirm including uppercase characters.");
+  const userInfo = prompt("Click OK to confirm including uppercase characters.");
   
-  const userAnswer = prompt("Click OK to confirm including lowercash characters.");
+  const userInfo = prompt("Click OK to confirm including lowercash characters.");
 
 
 
