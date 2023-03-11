@@ -17,18 +17,31 @@ console.log("hello!") ;
 let passwordLength = parseInt(
   prompt("How many characters would you like your password to be?")
 );
- // if (passwordLength >= 8){
- //   console.log("password is correct length");
-   //  }
+  if (passwordLength < 8){
+  return"Choose a length of at least 8 characters and no more than 128 characters." ;
+   }
+  if (passwordLength > 128){
+  return"Choose a length of at least 8 characters and no more than 128 characters." ;
+ }
+
+ console.log("password is correct length");
+   //  } else
  
 
 
 //validate input
 while(isNaN(passwordLength) || passwordLength <= 0) {
  passwordLength = parseInt(
-   prompt("Please enter a valid number for password length.")
+  prompt("Please enter a valid number for password length.")
  );
 }
+
+// if (129.isNaN(passwordLength)) {
+//   alert('129')
+//   return null;
+//  }
+
+
 const specialCharacters = confirm("Click OK to confirm including special characters.");
 
 const numericCharacters = confirm("Click OK to confirm including numeric characters.");
@@ -37,7 +50,7 @@ const uppercaseCharacters = confirm("Click OK to confirm including uppercase cha
 
 const lowercaseCharacters = confirm("Click OK to confirm including lowercase characters.");
 
-return "generated password !" ;
+//return "generated password !" ;
 }
 
 // const passwordText = ["numericCharacters","lowercaseCharacters"]
@@ -56,6 +69,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
+
 
 }
 
