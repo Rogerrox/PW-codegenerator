@@ -11,50 +11,78 @@ var uppercasedCharacters = ["A","B","C","D","E","F","G","H","I","J","K","L","M",
 "Q","R","S","T","U,","V","W","X","Y","Z"];
 
 function generatePassword(){
-console.log("hello!") ;
+//console.log("hello!") ;
 
 
 let passwordLength = parseInt(
   prompt("How many characters would you like your password to be?")
 );
-  if (passwordLength < 8){
-  return"Choose a length of at least 8 characters and no more than 128 characters." ;
-   }
-  if (passwordLength > 128){
-  return"Choose a length of at least 8 characters and no more than 128 characters." ;
- }
+//   if (passwordLength < 8){
+//   return"Choose a length of at least 8 characters and no more than 128 characters." ;
+//    }
+//   if (passwordLength > 128){
+//   return"Choose a length of at least 8 characters and no more than 128 characters." ;
+//  }
 
  console.log("password is correct length");
-   //  } else
+
  
 
 
 //validate input
-while(isNaN(passwordLength) || passwordLength <= 0) {
- passwordLength = parseInt(
-  prompt("Please enter a valid number for password length.")
- );
+// while(isNaN(passwordLength) || passwordLength <= 0) {
+//  passwordLength = parseInt(
+//   prompt("Please enter a valid number for password length.")
+//  );
+function userInput(){
+  userInput = []
+  result =prompt("How many characters between 8 and 128?");
+
 }
+ 
 
-// if (129.isNaN(passwordLength)) {
-//   alert('129')
-//   return null;
-//  }
+if (isNaN(result) || result < 8 || result > 128) {
+  alert("Must have 8 to 128 characters!");
+  return false;
+ }
+
+if (confirm("Will the password contain numbers?")){
+userInput = userInput.concat(numericCharacters);
+}
+if (confirm("Will the password contain special characters?")){
+userInput = userInput.concat(specialCharacters);
+} 
+
+if (confirm("Will the password contain lower case letters?")){
+  userInput = userInput.concat(lowercaseCharacters);
+  } 
+
+  if (confirm("Will the password contain upper case letters?")){
+    userInput = userInput.concat(uppercaseCharacters);
+    } 
+
+    else {
+      alert("You must choose at least one type of character!");
+    }
+
+    console.log(userInput);
+    return true;
+  }
 
 
-const specialCharacters = confirm("Click OK to confirm including special characters.");
+// const specialCharacters = confirm("Click OK to confirm including special characters.");
 
-const numericCharacters = confirm("Click OK to confirm including numeric characters.");
+// const numericCharacters = confirm("Click OK to confirm including numeric characters.");
 
-const uppercaseCharacters = confirm("Click OK to confirm including uppercase characters.");
+// const uppercaseCharacters = confirm("Click OK to confirm including uppercase characters.");
 
-const lowercaseCharacters = confirm("Click OK to confirm including lowercase characters.");
+// const lowercaseCharacters = confirm("Click OK to confirm including lowercase characters.");
 
 //return "generated password !" ;
-}
+//}
 
-// const passwordText = ["numericCharacters","lowercaseCharacters"]
-// passwordText("specialCharacters","uppercaseCharacters")
+//  const passwordText = ["numericCharacters","lowercaseCharacters"]
+//  const passwordText("specialCharacters","uppercaseCharacters")
 
 
 
@@ -65,12 +93,37 @@ const lowercaseCharacters = confirm("Click OK to confirm including lowercase cha
 
 // Write password to the #password input
 function writePassword() {
+  let prompt = userInput();
+  let passwordText = document.querySelector("#password");
+
+  if(prompt) {
+    let randomPassword = generatePassword();
+    passwordText.value = randomPassword;
+  }
+
+
+
+
+
+
+  
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  //var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
+  function writePassword() {
+    let prompt = userInput();
+    let passwordText = document.querySelector("#password");
 
+    if(prompt) {
+      let randomPassword = generatePassword();
+      passwordText.value = randomPassword;
+    } 
+    else { 
+      alert("You must choose at least one of the characters!");
+    }
+  }
 
 }
 
