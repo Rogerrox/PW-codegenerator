@@ -23,9 +23,6 @@ let passwordLength = parseInt(
 //   if (passwordLength > 128){
 //   return"Choose a length of at least 8 characters and no more than 128 characters." ;
 //  }
-
- console.log("password is correct length");
-
  
 
 
@@ -38,10 +35,10 @@ function userInput(){
   userInput = []
   result =prompt("How many characters between 8 and 128?");
 
-}
+
  
 
-if (isNaN(result) || result < 8 || result > 128) {
+if(isNaN(result) || result < 8 || result > 128) {
   alert("Must have 8 to 128 characters!");
   return false;
  }
@@ -54,7 +51,7 @@ userInput = userInput.concat(specialCharacters);
 } 
 
 if (confirm("Will the password contain lower case letters?")){
-  userInput = userInput.concat(lowercaseCharacters);
+  userInput = userInput.concat(lowercasedCharacters);
   } 
 
   if (confirm("Will the password contain upper case letters?")){
@@ -93,7 +90,7 @@ if (confirm("Will the password contain lower case letters?")){
 
 // Write password to the #password input
 function writePassword() {
-  let prompt = userInput();
+  let prompt = UserInput();
   let passwordText = document.querySelector("#password");
 
   if(prompt) {
@@ -101,29 +98,29 @@ function writePassword() {
     passwordText.value = randomPassword;
   }
 
+   
+  else { 
+    alert("You must choose at least one of the characters!");
+  }
+}
+
+
 
 
 
 
 
   
-  var password = generatePassword();
-  //var passwordText = document.querySelector("#password");
+  var password = generatePassword()
+   //var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-  function writePassword() {
-    let prompt = userInput();
-    let passwordText = document.querySelector("#password");
+  // function writePassword() {
+  //   let prompt = UserInput();
+  //   let passwordText = document.querySelector("#password");
 
-    if(prompt) {
-      let randomPassword = generatePassword();
-      passwordText.value = randomPassword;
-    } 
-    else { 
-      alert("You must choose at least one of the characters!");
-    }
-  }
+   
 
 }
 
