@@ -12,8 +12,8 @@ var uppercasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K
 
 function generatePassword() {
   //console.log("hello!") ;
-  function writePassword() {}
-  function userInput() {}
+  function writePassword() { }
+  function userInput() { }
   userInput = []
 
 
@@ -32,89 +32,89 @@ function generatePassword() {
 
   //validate input
   // while(isNaN(passwordLength) || passwordLength <= 0) {
-  //  passwordLength = parseInt(
-  //   prompt("Please enter a valid number for password length.")
-  //  );
+  passwordLength = parseInt(
+    prompt("Please enter a valid number for password length.")
+  );
   //function userInput() {
-   //userInput = []
-    result = prompt("How many characters between 8 and 128?");
+  //userInput = []
+  result = prompt("How many characters between 8 and 128?");
 
 
 
 
-    if (isNaN(result) || result < 8 || result > 128) {
-      alert("Must have 8 to 128 characters!");
-      return false;
-    }
-
-    if (confirm("Will the password contain numbers?")) {
-      userInput = userInput.concat(numericCharacters);
-    }
-    if (confirm("Will the password contain special characters?")) {
-      userInput = userInput.concat(specialCharacters);
-    }
-
-    if (confirm("Will the password contain lower case letters?")) {
-      userInput = userInput.concat(lowercasedCharacters);
-    }
-
-    if (confirm("Will the password contain upper case letters?")) {
-      userInput = userInput.concat(uppercaseCharacters);
-    }
-
-    else {
-      alert("You must choose at least one type of character!");
-    }
-
-    console.log(userInput);
-    return true;
+  if (isNaN(result) || result < 8 || result > 128) {
+    alert("Must have 8 to 128 characters!");
+    return false;
   }
 
+  if (confirm("Will the password contain numbers?")) {
+    userInput = userInput.concat(numericCharacters);
+  }
+  if (confirm("Will the password contain special characters?")) {
+    userInput = userInput.concat(specialCharacters);
+  }
 
-  // const specialCharacters = confirm("Click OK to confirm including special characters.");
+  if (confirm("Will the password contain lower case letters?")) {
+    userInput = userInput.concat(lowercasedCharacters);
+  }
 
-  // const numericCharacters = confirm("Click OK to confirm including numeric characters.");
+  if (confirm("Will the password contain upper case letters?")) {
+    userInput = userInput.concat(uppercasedCharacters);
+  }
 
-  // const uppercaseCharacters = confirm("Click OK to confirm including uppercase characters.");
+  else {
+    alert("You must choose at least one type of character!");
+  }
 
-  // const lowercaseCharacters = confirm("Click OK to confirm including lowercase characters.");
-
-  //return "generated password !" ;
-  //}
-
-  //  const passwordText = ["numericCharacters","lowercaseCharacters"]
-  //  const passwordText("specialCharacters","uppercaseCharacters")
-
-
-
-  // var userAnswers = userInfo();
-  // length of the password
-  //const passwordLength = prompt("How many characters would you like your password to be?");
-  //let passwordLength = parseInt(prompt("How many characters would you like your password to be?"));
-
-  // Write password to the #password input
-  //function writePassword() {
-    console.log("Start write password function")
-    //let prompt = UserInput();
-    let passwordText = document.querySelector("#password");
-
-    if (prompt) {
-      let randomPassword = generatePassword();
-      passwordText.value = randomPassword;
-    }
+  console.log(userInput);
+  return true;
+}
 
 
-    else {
-      alert("You must choose at least one of the characters!");
-    }
-  //}
+// const specialCharacters = confirm("Click OK to confirm including special characters.");
+
+// const numericCharacters = confirm("Click OK to confirm including numeric characters.");
+
+// const uppercaseCharacters = confirm("Click OK to confirm including uppercase characters.");
+
+// const lowercaseCharacters = confirm("Click OK to confirm including lowercase characters.");
+
+//return "generated password !" ;
+//}
+
+//  const passwordText = ["numericCharacters","lowercaseCharacters"]
+//  const passwordText("specialCharacters","uppercaseCharacters")
 
 
-  // var password = generatePassword()
-  // var passwordText = document.querySelector("#password");
 
-  // passwordText.value = password;
+// var userAnswers = userInfo();
+// length of the password
+//const passwordLength = prompt("How many characters would you like your password to be?");
+//let passwordLength = parseInt(prompt("How many characters would you like your password to be?"));
+
+// Write password to the #password input
+//function writePassword() {
+console.log("Start write password function")
+//let prompt = UserInput();
+let passwordText = document.querySelector("#password");
+
+if (prompt) {
+  let randomPassword = generatePassword();
+  passwordText.value = randomPassword;
+}
 
 
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword());
+else {
+  alert("You must choose at least one of the characters!");
+}
+//}
+
+
+// var password = generatePassword()
+// var passwordText = document.querySelector("#password");
+
+// passwordText.value = password;
+
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword());
